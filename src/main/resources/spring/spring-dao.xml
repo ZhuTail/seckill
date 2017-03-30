@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-3.1.xsd ">
+
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+    
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driver}"></property>
+        <property name="jdbcUrl" value="${url}"></property>
+        <property name="user" value="${username}"></property>
+        <property name="password" value="${passwd}"></property>
+
+        <property name="maxPoolSize" value="30"></property>
+        <property name="minPoolSize" value="10"></property>
+        <property name="autoCommitOnClose" value="false"></property>
+        <property name="checkoutTimeout" value="1000"></property>
+        <property name="acquireRetryAttempts" value="2"></property>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--注入dataSource-->
+        <property name="dataSource" ref="dataSource"></property>
+        <!--MyBatis全局配置-->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+        <!--扫描entity包 使用别名-->
+        <property name="typeAliasesPackage" value="com.swagger.entity"></property>
+        <!--扫描sql配置-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    </bean>
+
+    <!-- 配置扫描Dao接口，动态实现Dao，注入到Spring-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--注入sqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <!--需要扫描的包-->
+        <property name="basePackage" value="com.swagger.dao"></property>
+    </bean>
+</beans>
