@@ -22,7 +22,6 @@ VALUES
  ('1元秒杀iPhone6s','100','2017-04-05 00:00:00','2017-04-06 00:00:00'),
  ('1元秒杀iPhone6','100','2017-04-05 00:00:00','2017-04-06 00:00:00'),
  ('1元秒杀iPad','100','2017-04-05 00:00:00','2017-04-06 00:00:00');
-insert into seckill_detail(seckill_id,user_phone) values(1000,15665412278) 
 -- 创建秒杀明细表
 CREATE TABLE seckill_detail(
   seckill_id bigint not null COMMENT '秒杀商品ID',

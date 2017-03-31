@@ -8,11 +8,11 @@
         from seckill where seckill_id = #{seckillId}
         and number > 0
     </select>
-    
+
     <select id="queryAll" resultType="Seckill">
     	select seckill_id,name,number,start_time,end_time,create_time from seckill order by create_time desc limit #{offset},#{limit}
     </select>
-    
+
     <update id="redurceSeckill">
     	update seckill set number = number-1 where seckill_id = #{seckillId} and number > 0
     </update>

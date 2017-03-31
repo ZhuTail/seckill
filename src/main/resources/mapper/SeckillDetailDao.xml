@@ -22,9 +22,9 @@
         	d.seckill_id = #{seckill_id}
         
     </select>
-    
+
     <insert id="insertDetail">
     	insert into seckill_detail(seckill_id,user_phone) values(#{seckillId},#{userPhone})
     </insert>
-    
+
 </mapper>

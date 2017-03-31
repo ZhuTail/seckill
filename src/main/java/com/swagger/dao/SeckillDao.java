@@ -13,6 +13,7 @@ public interface SeckillDao {
 
     /**
      * 根据Id获得秒杀对象
+     *
      * @param seckillId
      * @return
      */
@@ -20,14 +21,16 @@ public interface SeckillDao {
 
     /**
      * 查询所有的秒杀对象
+     *
      * @param offset
-     * @param lomit
+     * @param limit
      * @return
      */
-    List<Seckill> queryAll(@Param("offset")int offset,@Param("limit")int limit);
+    List<Seckill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 
     /**
      * 减少库存
+     *
      * @param seckillId
      * @return
      */
