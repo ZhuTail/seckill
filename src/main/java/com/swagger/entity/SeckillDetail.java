@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by Administrator on 2017/3/30.
  */
-public class SeckollDetail {
+public class SeckillDetail {
 
     private Long SeckillId;
 

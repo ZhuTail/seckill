@@ -1,5 +1,7 @@
 package com.swagger.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.runner.RunWith;
@@ -28,12 +30,15 @@ public class SeckillDaoTest {
 
     @org.junit.Test
     public void queryAll() throws Exception {
-
+    	List<Seckill> seckills = seckillDao.queryAll(0, 100);
+    	for (Seckill seckill : seckills) {
+			System.out.println(seckill);
+		}
     }
 
     @org.junit.Test
-    public void redurceSeckoll() throws Exception {
-
+    public void redurceSeckill() throws Exception {
+    	seckillDao.redurceSeckill(1000);
     }
 
 }

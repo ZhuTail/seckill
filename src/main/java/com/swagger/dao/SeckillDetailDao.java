@@ -1,6 +1,6 @@
 package com.swagger.dao;
 
-import com.swagger.entity.SeckollDetail;
+import com.swagger.entity.SeckillDetail;
 
 import java.util.Date;
 import java.util.List;
@@ -10,19 +10,15 @@ import java.util.List;
  */
 public interface SeckillDetailDao {
 
-    /**
+    
+	int insertDetail(SeckillDetail seckollDetail);
+	
+	/**
      * 根据Id获得秒杀明细
      * @param seckillId
      * @param createTime
      * @return
      */
-    SeckollDetail queryById(long seckillId, Date createTime);
-
-    /**
-     * 查询所有的秒杀对象
-     * @param offset
-     * @param lomit
-     * @return
-     */
-    List<SeckollDetail> queryAll(int offset, int lomit);
+    SeckillDetail queryByIdWithSeckill(long seckillId);
+    
 }

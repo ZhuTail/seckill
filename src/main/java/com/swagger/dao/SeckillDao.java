@@ -1,9 +1,10 @@
 package com.swagger.dao;
 
-import com.swagger.entity.Seckill;
-
-import java.util.Date;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.swagger.entity.Seckill;
 
 /**
  * Created by Administrator on 2017/3/30.
@@ -17,22 +18,20 @@ public interface SeckillDao {
      */
     Seckill queryById(long seckillId);
 
-
     /**
      * 查询所有的秒杀对象
      * @param offset
      * @param lomit
      * @return
      */
-    List<Seckill> queryAll(int offset,int lomit);
-
+    List<Seckill> queryAll(@Param("offset")int offset,@Param("limit")int limit);
 
     /**
      * 减少库存
      * @param seckillId
      * @return
      */
-    int redurceSeckoll(long seckillId);
+    int redurceSeckill(long seckillId);
 
 
 }

@@ -22,13 +22,13 @@ VALUES
  ('1元秒杀iPhone6s','100','2017-04-05 00:00:00','2017-04-06 00:00:00'),
  ('1元秒杀iPhone6','100','2017-04-05 00:00:00','2017-04-06 00:00:00'),
  ('1元秒杀iPad','100','2017-04-05 00:00:00','2017-04-06 00:00:00');
-
+insert into seckill_detail(seckill_id,user_phone) values(1000,15665412278) 
 -- 创建秒杀明细表
 CREATE TABLE seckill_detail(
   seckill_id bigint not null COMMENT '秒杀商品ID',
-  user_phone INT not null COMMENT '秒杀手机号',
-  status tinyint not null COMMENT '秒杀状态：-1 无效,0 有效',
-  create_time TIMESTAMP not null COMMENT '创建时间',
+  user_phone bigint not null COMMENT '秒杀手机号',
+  status tinyint DEFAULT -1 not null COMMENT '秒杀状态：-1 无效,0 有效',
+  create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP null COMMENT '创建时间',
   PRIMARY KEY (seckill_id,user_phone),
   key idx_create_time(create_time)
 ) ENGINE = INNODB DEFAULT CHARSET=utf8 COMMENT '秒杀明细表';
