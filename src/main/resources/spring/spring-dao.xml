@@ -15,6 +15,7 @@
 		http://www.springframework.org/schema/task/spring-task-3.1.xsd ">
 
     <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driver}"></property>
         <property name="jdbcUrl" value="${jdbc.url}"></property>
