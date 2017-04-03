@@ -15,5 +15,7 @@
 
     <update id="redurceSeckill">
     	update seckill set number = number-1 where seckill_id = #{seckillId} and number > 0
+        and start_time  &lt;= #{seckillTime}
+        and end_time >= #{seckillTime}
     </update>
 </mapper>

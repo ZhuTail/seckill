@@ -27,7 +27,7 @@ public interface SeckillService {
      * @param seckillId
      * @return
      */
-    public Seckill queryById(Long seckillId);
+    public Seckill queryById(long seckillId);
 
 
     /**
@@ -35,16 +35,16 @@ public interface SeckillService {
      * @param seckillId
      * @return
      */
-    Exposer exportSeckillUrl(Long seckillId);
+    Exposer exportSeckillUrl(long seckillId);
 
     /**
      * 执行秒杀
      * @param seckillId
-     * @param userPhones
+     * @param userPhone
      * @param md5
      * @return
      */
-    SeckillExecution executeSeckill(Long seckillId, Long userPhones, String md5);
+    SeckillExecution executeSeckill(long seckillId, long userPhone, String md5);
 
 
 }

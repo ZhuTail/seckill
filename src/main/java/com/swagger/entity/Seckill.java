@@ -13,7 +13,7 @@ public class Seckill {
 
     private Long number;
 
-    private Date startTome;
+    private Date startTime;
 
     private Date endTime;
 
@@ -43,12 +43,12 @@ public class Seckill {
         this.number = number;
     }
 
-    public Date getStartTome() {
-        return startTome;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStartTome(Date startTome) {
-        this.startTome = startTome;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
     public Date getEndTime() {
@@ -73,7 +73,7 @@ public class Seckill {
                 "SeckillId=" + SeckillId +
                 ", name='" + name + '\'' +
                 ", number=" + number +
-                ", startTome=" + startTome +
+                ", startTome=" + startTime +
                 ", endTime=" + endTime +
                 ", createTime=" + createTime +
                 '}';

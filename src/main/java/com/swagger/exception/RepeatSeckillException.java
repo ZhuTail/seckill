@@ -7,8 +7,8 @@ package com.swagger.exception;
  */
 public class RepeatSeckillException extends SeckillException{
 
-    public RepeatSeckillException() {
-        super();
+    public RepeatSeckillException(String message) {
+        super(message);
     }
 
     public RepeatSeckillException(String message, Throwable cause) {

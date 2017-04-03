@@ -84,4 +84,16 @@ public class Exposer {
     public void setEnd(Long end) {
         this.end = end;
     }
+
+    @Override
+    public String toString() {
+        return "Exposer{" +
+                "flag=" + flag +
+                ", md5='" + md5 + '\'' +
+                ", seckillId=" + seckillId +
+                ", now=" + now +
+                ", start=" + start +
+                ", end=" + end +
+                '}';
+    }
 }

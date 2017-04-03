@@ -1,6 +1,7 @@
 package com.swagger.dao;
 
 import com.swagger.entity.SeckillDetail;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -10,13 +11,17 @@ import java.util.List;
  */
 public interface SeckillDetailDao {
 
-    
-	int insertDetail(SeckillDetail seckollDetail);
+	/**
+	 * 插入秒杀明细
+	 * @param seckillId
+	 * @param userPhone
+	 * @return
+	 */
+	int insertDetail(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 	
 	/**
      * 根据Id获得秒杀明细
      * @param seckillId
-     * @param createTime
      * @return
      */
     SeckillDetail queryByIdWithSeckill(long seckillId);

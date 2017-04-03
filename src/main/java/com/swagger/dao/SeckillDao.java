@@ -1,5 +1,6 @@
 package com.swagger.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -32,9 +33,10 @@ public interface SeckillDao {
      * 减少库存
      *
      * @param seckillId
+     * @param seckillTime
      * @return
      */
-    int redurceSeckill(long seckillId);
+    int redurceSeckill(@Param("seckillId") long seckillId, @Param("seckillTime") Date seckillTime);
 
 
 }

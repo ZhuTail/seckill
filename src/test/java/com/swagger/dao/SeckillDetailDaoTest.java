@@ -18,15 +18,12 @@ public class SeckillDetailDaoTest {
 
     @Test
     public void testInsertDetail() {
-        SeckillDetail seckollDetail = new SeckillDetail();
-        seckollDetail.setSeckillId(1001L);
-        seckollDetail.setUserPhone(15665412278L);
-        dao.insertDetail(seckollDetail);
+        dao.insertDetail(1001L,15665412278L);
     }
 
     @Test
     public void testQueryByIdWithSeckill() {
-        SeckillDetail queryByIdWithSeckill = dao.queryByIdWithSeckill(1001);
+        SeckillDetail queryByIdWithSeckill = dao.queryByIdWithSeckill(1000);
         System.out.println(queryByIdWithSeckill.getSeckill().getName());
     }
 

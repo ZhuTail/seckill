@@ -1,6 +1,7 @@
 package com.swagger.dto;
 
 import com.swagger.entity.SeckillDetail;
+import com.swagger.enums.SeckillStateEnum;
 
 /**
  * 秒杀成功
@@ -16,17 +17,17 @@ public class SeckillExecution {
 
     public SeckillDetail seckillDetail;
 
-    public SeckillExecution(Long seckillId, int state, String stateInfo, SeckillDetail seckillDetail) {
+    public SeckillExecution(Long seckillId, SeckillStateEnum stateEnum, SeckillDetail seckillDetail) {
         this.seckillId = seckillId;
-        this.state = state;
-        this.stateInfo = stateInfo;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
         this.seckillDetail = seckillDetail;
     }
 
-    public SeckillExecution(Long seckillId, int state, String stateInfo) {
+    public SeckillExecution(Long seckillId,SeckillStateEnum stateEnum) {
         this.seckillId = seckillId;
-        this.state = state;
-        this.stateInfo = stateInfo;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
     }
 
     public Long getSeckillId() {
@@ -60,5 +61,15 @@ public class SeckillExecution {
 
     public void setSeckillDetail(SeckillDetail seckillDetail) {
         this.seckillDetail = seckillDetail;
+    }
+
+    @Override
+    public String toString() {
+        return "SeckillExecution{" +
+                "seckillId=" + seckillId +
+                ", state=" + state +
+                ", stateInfo='" + stateInfo + '\'' +
+                ", seckillDetail=" + seckillDetail +
+                '}';
     }
 }

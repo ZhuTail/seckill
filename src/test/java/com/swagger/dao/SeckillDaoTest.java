@@ -1,5 +1,6 @@
 package com.swagger.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -38,7 +39,7 @@ public class SeckillDaoTest {
 
     @org.junit.Test
     public void redurceSeckill() throws Exception {
-    	seckillDao.redurceSeckill(1000);
+    	seckillDao.redurceSeckill(1000,new Date());
     }
 
 }
